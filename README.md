@@ -18,3 +18,11 @@ assertThat(((String) computeScalar("SHOW CREATE VIEW " + viewName)))
         "FROM\\s+" +
         "nation");
 
+        
+assertThat(((String) computeScalar("SHOW CREATE VIEW " + viewName)))
+        .matches("(?s)" +
+                "CREATE VIEW \\Q" + catalogName + "." + schemaName + "." + viewName + "\\E\\s+AS\\s+" +
+                "SELECT \\*\\s+" +
+                "FROM\\s+" +
+                "nation");
+
