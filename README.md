@@ -11,3 +11,10 @@ CREATE TABLE nation (
     n_comment String
 ) ENGINE = Log;
 
+assertThat(((String) computeScalar("SHOW CREATE VIEW " + viewName)))
+    .matches("(?s)" +
+        "CREATE VIEW " + catalogName + "\\." + schemaName + "\\." + viewName + ".* AS\\s+" +
+        "SELECT \\*\\s+" +
+        "FROM\\s+" +
+        "nation");
+
