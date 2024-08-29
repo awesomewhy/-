@@ -19,3 +19,29 @@
     }
   }
 }
+
+{
+  "catalogs": {
+    "file": {
+      "schemas": {
+        "*": {
+          "owner": "admin",
+          "permissions": {
+            "select": ["alice"]
+          }
+        }
+      }
+    }
+  },
+  "catalogs-default": {
+    "schemas": {
+      "*": {
+        "owner": "admin",
+        "permissions": {
+          "select": []
+        }
+      }
+    }
+  }
+}
+
